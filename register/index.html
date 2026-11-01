@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="../images/favicon.png">
-<link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#075333">
 <meta name="description" content="Apply to become a TBARC India volunteer.">
 <title>Volunteer Application | TBARC India</title>
-<link rel="canonical" href="https://volunteer.tbarc.in/register/">
-<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="icon" type="image/png" href="/images/favicon.png">
 <style>
 :root{--green:#075333;--dark:#043b25;--light:#f0f6ef;--page:#f7faf6;--text:#202923;--muted:#626a63;--border:#e1e9e1;--shadow:0 10px 30px rgba(4,59,37,.07)}
 *{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--text);font:15px/1.65 Arial,Helvetica,sans-serif}
@@ -29,7 +28,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 25px}
 </style>
 </head>
 <body>
-<header class="top"><div class="nav"><a href="../"><img class="logo" src="../images/logo.png" alt="TBARC India"></a><a href="../">← Back to Home</a></div></header>
+<header class="top"><div class="nav"><a href="/"><img class="logo" src="/images/logo.png" alt="TBARC India"></a><a href="/">← Back to Home</a></div></header>
 <main>
 <div class="intro"><span class="eyebrow">Join the TBARC community</span><h1>Volunteer Application</h1><p>Tell us a little about yourself, your interests and how you would like to contribute to biodiversity conservation.</p></div>
 <form id="applicationForm">
@@ -106,7 +105,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 25px}
 <label class="consent"><input type="checkbox" id="consent" required><span>I confirm that the information provided is accurate. I understand that submitting this application does not automatically make me a TBARC volunteer. My application will be reviewed by the TBARC team. <small class="required">*</small></span></label>
 <label class="consent" style="margin-top:12px"><input type="checkbox" id="directoryConsent"><span>If my application is approved, I agree that my photograph, name and volunteer role may be displayed in the public TBARC volunteer directory. This is optional.</span></label>
 </section>
-<div class="actions"><a class="back" href="../">← Back to volunteer homepage</a><button class="btn" type="submit">Submit Application →</button></div>
+<div class="actions"><a class="back" href="/">← Back to volunteer homepage</a><button class="btn" type="submit">Submit Application →</button></div>
 <div class="notice" id="notice" role="status">The registration form layout is ready, but secure submission is not connected yet. Your information has not been sent or stored. The next step is to connect this page to the TBARC Apps Script backend.</div>
 <div class="notice" id="success" role="status" style="background:#edf7ef;border-color:#b9d8c0;color:#174b2b"></div>
 </form>
@@ -115,7 +114,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 25px}
 <footer>© 2026 Tropical Biodiversity Action and Research Centre (TBARC India)</footer>
 <script>
 /* Paste your deployed Apps Script Web app URL here after deployment. */
-const TBARC_API_URL = 'https://script.google.com/macros/s/AKfycbw3id8KD8o_3AGK14bKkB_sBo7NKoiYhK-q0rpjKpnFsLa2bv4Acx60_kmdoj8ht1g4yA/exec';
+const TBARC_API_URL = 'https://script.google.com/macros/s/AKfycbw8NLdmtrt0L1KxgJZDYyg-xj9UL3mKHeJabELRgHiLcjNqVwLIiiFPrV7sSD4VoVK1/exec';
 
 const form = document.getElementById('applicationForm');
 const submitButton = form.querySelector('button[type="submit"]');
