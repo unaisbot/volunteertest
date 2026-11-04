@@ -129,6 +129,145 @@
       .footer-bottom { margin-top: 24px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+
+    /* Distinctive Our Team feature */
+    .team-promo-section {
+      padding: 58px 22px;
+      background: #f3f7f2;
+    }
+    .team-promo-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(230px, .8fr);
+      align-items: center;
+      gap: 36px;
+      padding: 48px 52px;
+      border-radius: 22px;
+      color: #fff;
+      background: linear-gradient(120deg, #043b25 0%, #075333 58%, #147044 100%);
+      box-shadow: 0 18px 42px rgba(4, 59, 37, .16);
+    }
+    .team-promo-card::before,
+    .team-promo-card::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .team-promo-card::before {
+      width: 360px;
+      height: 360px;
+      right: 7%;
+      top: -230px;
+    }
+    .team-promo-card::after {
+      width: 290px;
+      height: 290px;
+      right: -90px;
+      bottom: -220px;
+    }
+    .team-promo-content { max-width: 690px; }
+    .team-promo-label {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 6px 12px;
+      border: 1px solid rgba(220, 242, 222, .35);
+      border-radius: 30px;
+      color: #d8efdc;
+      background: rgba(255,255,255,.08);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .team-promo-content h2 {
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.14;
+      letter-spacing: -.7px;
+    }
+    .team-promo-content p {
+      max-width: 680px;
+      margin: 0;
+      color: #e0eee4;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .team-promo-action {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .team-promo-mark {
+      display: grid;
+      place-items: center;
+      width: 86px;
+      height: 86px;
+      margin-bottom: 21px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 24px;
+      background: rgba(255,255,255,.1);
+    }
+    .team-promo-mark svg {
+      width: 52px;
+      height: 52px;
+      fill: none;
+      stroke: #e4f2e6;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .team-promo-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      min-width: 205px;
+      padding: 14px 18px;
+      border: 2px solid #e5f1df;
+      border-radius: 10px;
+      color: #063d27;
+      background: #e5f1df;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .team-promo-button:hover {
+      transform: translateY(-3px);
+      background: #fff;
+      box-shadow: 0 9px 22px rgba(0,0,0,.16);
+    }
+    .team-promo-arrow { font-size: 20px; line-height: 1; }
+    .team-promo-note {
+      margin-top: 12px;
+      color: #c8dfcf;
+      font-size: 11px;
+    }
+    @media (max-width: 700px) {
+      .team-promo-section { padding: 42px 16px; }
+      .team-promo-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 24px;
+        border-radius: 17px;
+      }
+      .team-promo-content { text-align: center; }
+      .team-promo-action { padding-top: 2px; }
+      .team-promo-mark { width: 70px; height: 70px; margin-bottom: 17px; }
+      .team-promo-mark svg { width: 43px; height: 43px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .team-promo-button { transition: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -167,6 +306,33 @@
                loading="lazy">
         </div>
         <p class="intro"><strong>Tropical Biodiversity Action and Research Centre (TBARC India)</strong> welcomes enthusiastic volunteers who want to contribute their time, skills, and ideas to biodiversity conservation, ecological research, and environmental education. Whether you enjoy fieldwork, working with data, designing creative content, capturing stories through photos and videos, or engaging communities, you can help make a difference.</p>
+      </div>
+    </section>
+
+    <section class="team-promo-section" id="our-team">
+      <div class="container">
+        <div class="team-promo-card">
+          <div class="team-promo-content">
+            <span class="team-promo-label">The people behind the purpose</span>
+            <h2>Meet the Team<br>Making a Difference</h2>
+            <p>Behind every conservation effort is a team driven by curiosity, collaboration, and a shared commitment to nature. Get to know the people contributing to biodiversity research, conservation, and environmental awareness at TBARC India.</p>
+          </div>
+          <div class="team-promo-action">
+            <div class="team-promo-mark" aria-hidden="true">
+              <svg viewBox="0 0 100 100" role="presentation">
+                <circle cx="50" cy="30" r="13"/>
+                <circle cx="22" cy="43" r="10"/>
+                <circle cx="78" cy="43" r="10"/>
+                <path d="M27 78c0-15 9-25 23-25s23 10 23 25M5 78c0-12 6-20 17-20 5 0 9 2 12 6M95 78c0-12-6-20-17-20-5 0-9 2-12 6"/>
+              </svg>
+            </div>
+            <a class="team-promo-button" href="https://team.tbarc.in">
+              <span>Explore Our Team</span>
+              <span class="team-promo-arrow" aria-hidden="true">→</span>
+            </a>
+            <span class="team-promo-note">Discover the people behind TBARC India</span>
+          </div>
+        </div>
       </div>
     </section>
 
