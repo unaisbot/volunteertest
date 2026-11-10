@@ -26,11 +26,179 @@ input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0
 footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 25px}
 @media(max-width:650px){main{margin:28px auto}.grid,.choice-groups{grid-template-columns:1fr}.actions{align-items:stretch;flex-direction:column-reverse}.btn{text-align:center}.logo{width:112px}.nav{padding:10px 14px}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* TBARC unified visual system */
+:root{
+ --green:#14532d;--green2:#166534;--lime:#84cc16;--ink:#17251b;
+ --muted:#647067;--pale:#f1f7ef;--line:#e2eae0;--white:#fff;
+ --shadow:0 18px 50px rgba(20,83,45,.10);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif!important;color:var(--ink)!important;background:#fff!important;line-height:1.7!important}
+h1,h2,h3,.footer-brand,.brand-name{font-family:'Manrope',sans-serif!important}
+a{transition:color .2s ease,background .2s ease,transform .2s ease}
+.container,.nav-container,.nav,.footer-grid{max-width:1160px}
+.site-header,.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,234,224,.9)!important}
+.nav-container,.nav{min-height:88px;padding:10px 22px!important;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.brand-logo,.logo{width:67px!important;height:67px!important;max-height:67px!important;object-fit:contain;object-position:center}
+.brand-name{font-size:.94rem;font-weight:800;line-height:1.22;color:var(--green);max-width:190px}
+.nav-links{display:flex;align-items:center;gap:25px}
+.nav-link,.nav-links>a,.nav>a{font-size:.9rem!important;font-weight:600!important;color:#425047!important;padding:9px 0!important;border-radius:0!important;background:transparent!important;text-decoration:none}
+.nav-link:hover,.nav-links>a:hover,.nav>a:hover{color:var(--green)!important;background:transparent!important}
+.nav-link.primary,.nav-links .nav-cta,.nav>a:last-child{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px!important;border-radius:7px!important;background:var(--green)!important;color:#fff!important;font-weight:700!important}
+.nav-link.primary:hover,.nav-links .nav-cta:hover,.nav>a:last-child:hover{background:#0d3b20!important;transform:translateY(-2px)}
+.menu-toggle{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;color:var(--green);align-items:center;justify-content:center;cursor:pointer}
+.menu-toggle svg{width:22px;height:22px}
+.hero{padding:24px 22px 0!important;color:#fff!important;background:transparent!important}
+.hero-inner{max-width:1160px!important;min-height:590px;padding:76px 7.5%!important;border-radius:18px;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;background:#173d25 url('images/hero.jpg') center 48%/cover no-repeat}
+.hero-inner:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,32,17,.88) 0%,rgba(5,32,17,.68) 48%,rgba(5,32,17,.12) 100%);z-index:0}
+.hero-inner>*{position:relative;z-index:1}
+.hero .eyebrow{display:inline-flex!important;align-items:center;gap:9px;padding:0!important;margin:0 0 10px!important;border:0!important;border-radius:0!important;background:transparent!important;color:#d8f3b0!important;font-size:.76rem!important;letter-spacing:.14em!important}
+.hero .eyebrow:before{content:"";width:25px;height:2px;background:var(--lime)}
+.hero h1{max-width:760px!important;margin:19px 0 20px!important;color:#fff!important;font-size:clamp(2.7rem,6vw,5.25rem)!important;line-height:1.08!important;letter-spacing:-.06em!important}
+.hero p{max-width:570px!important;color:rgba(255,255,255,.86)!important;font-size:1.12rem!important;line-height:1.8!important}
+.button{display:inline-flex!important;align-items:center;justify-content:center;gap:10px;padding:13px 20px!important;border-radius:7px!important;background:#fff!important;color:var(--green)!important;font-size:.94rem!important;font-weight:700!important;text-decoration:none!important;border:1px solid #dce8dc!important}
+.button:hover{background:var(--pale)!important;transform:translateY(-2px)}
+.section{padding:88px 22px!important}
+.section.soft,.team-promo-section{background:var(--pale)!important}
+.section-heading{max-width:760px;margin:0 auto 38px!important;text-align:left!important}
+.section-heading .kicker{display:inline-flex;align-items:center;gap:9px;color:var(--green2)!important;font-size:.76rem!important;font-weight:800!important;letter-spacing:.14em!important}
+.section-heading .kicker:before{content:"";width:25px;height:2px;background:var(--lime)}
+.section-heading h2,.cta h2{font-size:clamp(2rem,4vw,3.05rem)!important;letter-spacing:-.045em!important;color:var(--ink)!important;margin:14px 0!important}
+.section-heading p{color:var(--muted)!important}
+.opportunity-card{border:1px solid var(--line)!important;border-radius:13px!important;box-shadow:none!important;transition:.25s!important}
+.opportunity-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)!important;border-color:#c5dcb8!important}
+.cta{background:linear-gradient(120deg,#123f24,#1e6637)!important;border-radius:16px;margin:0 22px 80px!important;padding:58px 30px!important}
+.cta h2{color:#fff!important}.cta p{color:#d7e8d5!important}
+.site-footer,footer.site-footer,footer:not(.plain-footer){background:#102d1b!important;color:#dce8dd!important;border:0!important;padding:62px 22px 22px!important;text-align:left!important}
+.footer-grid{display:grid!important;grid-template-columns:1.25fr .7fr .7fr 1fr!important;gap:42px!important;margin:0 auto!important}
+.footer-brand-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo{width:65px!important;height:65px!important;max-height:65px!important;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
+.footer-brand{color:#fff!important;font-size:.94rem!important;line-height:1.25!important;font-weight:800!important}
+.footer-socials{display:flex;gap:9px!important;margin-top:22px}
+.footer-socials a{width:37px!important;height:37px!important;border:1px solid #45634c;border-radius:50%;display:grid!important;place-items:center;color:#e7f1e8!important}
+.footer-socials a:hover{background:#d5edbd;color:#153d23!important;opacity:1!important}
+.footer-socials svg{width:17px!important;height:17px!important;fill:currentColor!important}
+.footer-heading{color:#fff!important;font-size:.88rem!important;text-transform:uppercase;letter-spacing:.1em;margin:2px 0 18px!important}
+.footer-links{display:grid;gap:10px}
+.footer-links a,.footer-contact-row a{font-size:.88rem!important;color:#b8cbbb!important;text-decoration:none!important}
+.footer-links a:hover,.footer-contact-row a:hover{color:#d5edbd!important;text-decoration:none!important}
+.footer-contact-row{color:#b8cbbb!important;font-size:.88rem!important;gap:13px!important;margin-bottom:13px!important}
+.footer-contact-row p{color:#b8cbbb!important;font-size:.88rem!important}
+.footer-bottom{border-top:1px solid #34533c!important;margin:45px auto 0!important;padding-top:20px!important;text-align:center!important}
+.footer-bottom p{color:#9fb6a3!important;font-size:.8rem!important}
+@media(max-width:980px){.footer-grid{grid-template-columns:1.2fr 1fr 1fr!important}.footer-contact{grid-column:2/4}}
+@media(max-width:760px){
+ .nav-container,.nav{min-height:72px;padding:9px 17px!important}
+ .brand-logo,.logo{width:52px!important;height:52px!important}
+ .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px 22px 22px;box-shadow:0 16px 22px rgba(20,50,25,.08);align-items:stretch;gap:0;flex-direction:column}
+ .nav-links.open{display:flex}
+ .nav-link,.nav-links>a{padding:13px 3px!important;border-bottom:1px solid #edf2eb!important}
+ .nav-link.primary{margin-top:10px;justify-content:center}
+ .menu-toggle{display:flex}
+ .hero{padding:12px 17px 0!important}
+ .hero-inner{min-height:560px;padding:52px 27px!important;border-radius:12px}
+ .hero h1{font-size:clamp(2.65rem,12vw,4rem)!important}
+ .hero p{font-size:1rem!important}
+ .section{padding:68px 17px!important}
+ .section-heading{text-align:left!important}
+ .cta{margin:0 17px 55px!important;padding:36px 24px!important}
+ .footer-grid{grid-template-columns:1fr 1fr!important;gap:32px 22px!important}
+ .footer-brand-column{grid-column:1/3}
+ .footer-contact{grid-column:auto}
+ .site-footer{padding:48px 18px 20px!important}
+ .footer-logo{width:58px!important;height:58px!important}
+ .footer-bottom{margin-top:32px!important}
+}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr!important}.footer-brand-column{grid-column:auto}.footer-contact{grid-column:auto}}
+
+
+/* Registration page unified TBARC layout */
+:root{--green:#14532d;--green2:#166534;--lime:#84cc16;--ink:#17251b;--muted:#647067;--pale:#f1f7ef;--line:#e2eae0;--shadow:0 18px 50px rgba(20,83,45,.10)}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif!important;color:var(--ink)!important;background:#fff!important;line-height:1.7!important}
+h1,h2,h3,.brand-name,.footer-brand{font-family:'Manrope',sans-serif!important}
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,234,224,.9)!important}
+.nav{max-width:1160px!important;min-height:88px!important;padding:10px 22px!important;gap:24px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.logo{width:67px!important;height:67px!important;max-height:67px!important}
+.brand-name{font-size:.94rem;font-weight:800;line-height:1.22;color:var(--green);max-width:190px}
+.nav-links{display:flex;align-items:center;gap:25px}
+.nav-links a{font-size:.9rem;font-weight:600;color:#425047;text-decoration:none}
+.nav-links a:hover{color:var(--green)}
+.menu-toggle{display:none;background:white;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;color:var(--green);align-items:center;justify-content:center}
+.menu-toggle svg{width:22px;height:22px}
+main{max-width:none!important;margin:0 auto!important;padding:0 0 80px!important}
+.registration-hero{padding:24px 22px 0}
+.registration-hero-panel{max-width:1160px;min-height:310px;margin:auto;border-radius:18px;overflow:hidden;position:relative;display:flex;align-items:center;background:#173d25 url('/images/hero.jpg') center 48%/cover no-repeat}
+.registration-hero-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,32,17,.9),rgba(5,32,17,.62),rgba(5,32,17,.16))}
+.registration-hero-content{position:relative;z-index:1;padding:54px 7.5%;max-width:800px}
+.registration-hero .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d8f3b0;font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.registration-hero .eyebrow:before{content:"";width:25px;height:2px;background:var(--lime)}
+.registration-hero h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;letter-spacing:-.055em;color:#fff;margin:17px 0}
+.registration-hero p{max-width:650px;color:rgba(255,255,255,.86);font-size:1.04rem}
+form#applicationForm{max-width:900px;margin:55px auto 0;padding:clamp(22px,4vw,40px)!important;background:#fff;border:1px solid var(--line)!important;border-radius:15px!important;box-shadow:var(--shadow)!important}
+.section{padding:0 0 30px!important;margin:0 0 30px!important;border-bottom:1px solid var(--line)!important}
+.section h2{font-size:1.22rem!important;color:var(--green)!important;margin:0 0 5px!important;letter-spacing:-.02em}
+.hint{font-size:.88rem!important;color:var(--muted)!important;margin:0 0 20px!important}
+label,.group-label{font-size:.86rem!important;color:#344238}
+input,select,textarea{font-family:'DM Sans',sans-serif!important;border:1px solid #d4dfd2!important;border-radius:7px!important;padding:12px 13px!important;background:#fff}
+input:focus,select:focus,textarea:focus{border-color:var(--green)!important;box-shadow:0 0 0 3px #14532d18!important}
+.choice-box{border:1px solid var(--line)!important;border-radius:10px!important;background:#f8fbf7!important}
+.choice-box h3{font-family:'Manrope',sans-serif!important;color:var(--green)!important}
+.phone-input .country-code{background:var(--pale)!important;border-color:#d4dfd2!important}
+.btn{border-radius:7px!important;background:var(--green)!important;padding:13px 22px!important;font-family:'DM Sans',sans-serif!important}
+.btn:hover{background:#0d3b20!important;transform:translateY(-2px)}
+.back{color:var(--green)!important}
+.notice{border-radius:8px!important}
+footer.site-footer{margin-top:0!important}
+@media(max-width:760px){
+ .nav{min-height:72px!important;padding:9px 17px!important}
+ .logo{width:52px!important;height:52px!important}
+ .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px 22px 22px;box-shadow:0 16px 22px rgba(20,50,25,.08);flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:13px 3px;border-bottom:1px solid #edf2eb}
+ .menu-toggle{display:flex}
+ .registration-hero{padding:12px 17px 0}
+ .registration-hero-panel{min-height:300px;border-radius:12px}
+ .registration-hero-content{padding:42px 25px}
+ main{padding-bottom:55px!important}
+ form#applicationForm{margin:35px 17px 0;padding:22px 18px!important}
+}
+
+</style>
 </head>
 <body>
-<header class="top"><div class="nav"><a href="/"><img class="logo" src="/images/logo.png" alt="TBARC India"></a><a href="/">← Back to Home</a></div></header>
+<header class="top site-header">
+  <div class="nav">
+    <a class="brand" href="/" aria-label="Volunteer homepage">
+      <img class="logo" src="/images/logo.png" alt="TBARC India">
+      <span class="brand-name">Tropical Biodiversity<br><span>Action &amp; Research Centre</span></span>
+    </a>
+    <nav class="nav-links" id="mainNav" aria-label="Main navigation">
+      <a href="/">Volunteer Home</a>
+      <a href="https://tbarc.in/">TBARC Main Site</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
 <main>
-<div class="intro"><span class="eyebrow">Join the TBARC community</span><h1>Volunteer Application</h1><p>Tell us a little about yourself, your interests and how you would like to contribute to biodiversity conservation.</p></div>
+<section class="registration-hero">
+  <div class="registration-hero-panel">
+    <div class="registration-hero-content">
+      <span class="eyebrow">Join the TBARC community</span>
+      <h1>Volunteer Application</h1>
+      <p>Tell us a little about yourself, your interests and how you would like to contribute to biodiversity conservation.</p>
+    </div>
+  </div>
+</section>
 <form id="applicationForm">
 <section class="section">
 <h2>1. Personal details</h2><p class="hint">Please provide accurate contact information.</p>
@@ -113,7 +281,30 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 25px}
 </form>
 <iframe name="tbarcSubmitFrame" id="tbarcSubmitFrame" title="Application submission" style="display:none"></iframe>
 </main>
-<footer>© 2026 Tropical Biodiversity Action and Research Centre (TBARC India)</footer>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand-column">
+      <div class="footer-brand-row">
+        <a href="https://tbarc.in" aria-label="TBARC India home"><img class="footer-logo" src="images/logo.png" alt="TBARC India logo"></a>
+        <div class="footer-brand">Tropical Biodiversity<br>Action &amp; Research Centre</div>
+      </div>
+      <p style="max-width:290px;color:#b8cbbb;font-size:.88rem">Working for biodiversity conservation through ecological research, education and community action.</p>
+      <div class="footer-socials" aria-label="TBARC social media links">
+        <a href="https://www.facebook.com/tbarcindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.4 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5v1.8H7V13h2.8v8h3.6Z"/></svg></a>
+        <a href="https://www.instagram.com/tbarcindia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 3a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Zm0 2.2a2.6 2.6 0 1 1 0 5.2 2.6 2.6 0 0 1 0-5.2Zm5.1-3.8a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z"/></svg></a>
+        <a href="https://www.linkedin.com/company/tbarcindia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg></a>
+        <a href="https://www.youtube.com/@tbarcindia" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg></a>
+      </div>
+    </div>
+    <div><h2 class="footer-heading">Explore</h2><nav class="footer-links"><a href="https://tbarc.in/">Main website</a><a href="https://team.tbarc.in/">Our team</a><a href="https://projects.tbarc.in/">Projects</a><a href="https://events.tbarc.in/">Events</a></nav></div>
+    <div><h2 class="footer-heading">Volunteer</h2><nav class="footer-links"><a href="/">Volunteer home</a><a href="/register/">Apply to volunteer</a><a href="#opportunities">Opportunities</a></nav></div>
+    <div><h2 class="footer-heading">Contact</h2>
+      <div class="footer-contact-row"><a href="mailto:tbarcindia@gmail.com">tbarcindia@gmail.com</a></div>
+      <div class="footer-contact-row"><p>Appolo, Mampad College P.O.,<br>Nilambur, Keralam, 676542</p></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Tropical Biodiversity Action and Research Centre (TBARC India). All rights reserved.</p></div>
+</footer>
 <script>
 /* Paste your deployed Apps Script Web app URL here after deployment. */
 const TBARC_API_URL = 'https://script.google.com/macros/s/AKfycbw8NLdmtrt0L1KxgJZDYyg-xj9UL3mKHeJabELRgHiLcjNqVwLIiiFPrV7sSD4VoVK1/exec';
@@ -255,6 +446,13 @@ form.addEventListener('submit', async function(event) {
     notice.scrollIntoView({behavior:'smooth',block:'center'});
   }
 });
+</script>
+<script>
+(function(){
+ const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');
+ if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));}
+})();
 </script>
 </body>
 </html>
