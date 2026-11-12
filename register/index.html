@@ -172,6 +172,128 @@ footer.site-footer{margin-top:0!important}
 }
 
 </style>
+
+<style>
+
+/* Final TBARC volunteer-registration visual system */
+:root{
+ --green:#14532d;--green2:#166534;--lime:#84cc16;--ink:#17251b;
+ --muted:#647067;--pale:#f1f7ef;--line:#e2eae0;--page:#f7faf6;
+ --shadow:0 18px 50px rgba(20,83,45,.10);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif!important;color:var(--ink)!important;background:var(--page)!important;line-height:1.7!important}
+h1,h2,h3,.brand-name,.footer-brand{font-family:'Manrope',sans-serif!important}
+a{transition:color .2s ease,background .2s ease,transform .2s ease}
+.top.site-header{position:sticky!important;top:0;z-index:100;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)!important}
+.nav{position:relative;max-width:1160px!important;min-height:86px!important;padding:10px 22px!important;gap:22px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.logo{width:66px!important;height:66px!important;max-height:66px!important;object-fit:contain;object-position:center}
+.brand-name{font-size:.9rem!important;line-height:1.25!important;font-weight:800!important;color:var(--green)!important;max-width:190px}
+.brand-name span{color:#6b8f35}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:.86rem!important;font-weight:700!important;color:#425047!important;text-decoration:none!important;padding:9px 0}
+.nav-links a:hover{color:var(--green)!important}
+.menu-toggle{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;color:var(--green);align-items:center;justify-content:center;cursor:pointer}
+main{max-width:none!important;margin:0 auto!important;padding:0 0 76px!important}
+.registration-hero{padding:22px 22px 0!important}
+.registration-hero-panel{max-width:1160px!important;min-height:330px!important;margin:auto;border-radius:0 0 18px 18px!important;overflow:hidden;position:relative;display:flex;align-items:center;background:#173d25 url('/images/hero.jpg') center 48%/cover no-repeat!important;box-shadow:var(--shadow)}
+.registration-hero-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,32,17,.91),rgba(5,32,17,.70) 55%,rgba(5,32,17,.18))}
+.registration-hero-content{position:relative;z-index:1;padding:55px 7.5%!important;max-width:800px}
+.registration-hero .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d8f3b0!important;font-size:.76rem!important;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.registration-hero .eyebrow:before{content:"";width:25px;height:2px;background:var(--lime)}
+.registration-hero h1{font-size:clamp(2.5rem,5vw,4rem)!important;line-height:1.1;letter-spacing:-.055em;color:#fff!important;margin:17px 0!important}
+.registration-hero p{max-width:650px;color:rgba(255,255,255,.88)!important;font-size:1.04rem}
+form#applicationForm{max-width:940px!important;margin:42px auto 0!important;padding:clamp(22px,4vw,42px)!important;background:#fff;border:1px solid var(--line)!important;border-radius:16px!important;box-shadow:var(--shadow)!important}
+form#applicationForm .section{padding:0 0 30px!important;margin:0 0 30px!important;border-bottom:1px solid var(--line)!important}
+form#applicationForm .section:last-of-type{border:0!important;margin-bottom:0!important;padding-bottom:0!important}
+form#applicationForm .section h2{font-size:1.18rem!important;color:var(--green)!important;margin:0 0 6px!important;letter-spacing:-.02em}
+form#applicationForm .hint{font-size:.87rem!important;color:var(--muted)!important;margin:0 0 20px!important}
+form#applicationForm .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 20px}
+form#applicationForm .field{min-width:0}
+form#applicationForm .field.full{grid-column:1/-1}
+form#applicationForm label,form#applicationForm .group-label{display:block;font-size:.86rem!important;font-weight:700!important;color:#344238;margin:0 0 7px}
+form#applicationForm small.required{color:#b42318!important}
+form#applicationForm input:not([type="checkbox"]):not([type="radio"]),form#applicationForm select,form#applicationForm textarea{width:100%;font-family:'DM Sans',sans-serif!important;font-size:.9rem!important;color:var(--ink)!important;border:1px solid #d4dfd2!important;border-radius:7px!important;padding:12px 13px!important;background:#fff!important;outline:none}
+form#applicationForm input:focus,form#applicationForm select:focus,form#applicationForm textarea:focus{border-color:var(--green)!important;box-shadow:0 0 0 3px #14532d18!important}
+form#applicationForm textarea{min-height:125px;resize:vertical}
+form#applicationForm .choice-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+form#applicationForm .choice-box{border:1px solid var(--line)!important;border-radius:11px!important;padding:17px!important;background:#f8fbf7!important}
+form#applicationForm .choice-box h3{font-size:.92rem!important;color:var(--green)!important;margin:0 0 12px}
+form#applicationForm .checklist{display:grid;gap:10px}
+form#applicationForm .check{display:flex;align-items:flex-start;gap:9px;font-size:.83rem!important;font-weight:500!important;color:#425047;line-height:1.45}
+form#applicationForm .check input,form#applicationForm .consent input{width:17px!important;height:17px!important;flex:0 0 17px;margin:2px 0 0!important;accent-color:var(--green);padding:0!important}
+form#applicationForm .phone-input{display:flex;align-items:stretch}
+form#applicationForm .phone-input .country-code{display:flex;align-items:center;padding:0 13px;background:var(--pale)!important;border:1px solid #d4dfd2!important;border-right:0;border-radius:7px 0 0 7px;color:var(--green);font-weight:700;white-space:nowrap}
+form#applicationForm .phone-input input{border-radius:0 7px 7px 0!important;min-width:0}
+form#applicationForm .upload-note{font-size:.76rem!important;color:var(--muted)!important;margin:7px 0 0}
+form#applicationForm .consent{display:flex;align-items:flex-start;gap:10px;font-size:.83rem!important;font-weight:500!important;color:#425047;line-height:1.55}
+form#applicationForm .actions{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:24px}
+form#applicationForm .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:7px!important;padding:13px 22px!important;background:var(--green)!important;color:#fff!important;font-family:'DM Sans',sans-serif!important;font-weight:800;font-size:.9rem;cursor:pointer;text-decoration:none}
+form#applicationForm .btn:hover{background:#0d3b20!important;transform:translateY(-2px)}
+form#applicationForm .btn:disabled{opacity:.65;cursor:wait;transform:none}
+form#applicationForm .back{font-size:.85rem;font-weight:700;color:var(--green)!important;text-decoration:none}
+form#applicationForm .notice{display:none;margin-top:18px;padding:14px 16px;border-radius:9px;background:#fff5e8;border:1px solid #f0d5ae;color:#6b471c;font-size:.84rem}
+footer.site-footer{background:#102d1b!important;color:#dce8dd!important;border:0!important;padding:58px 22px 22px!important;text-align:left!important;margin-top:0!important}
+.footer-grid{max-width:1160px!important;display:grid!important;grid-template-columns:1.25fr .7fr .7fr 1fr!important;gap:38px!important;margin:0 auto!important}
+.footer-logo{width:62px!important;height:62px!important;max-height:62px!important;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
+.footer-brand{color:#fff!important;font-size:.94rem!important;line-height:1.25!important}
+.footer-heading{color:#fff!important;font-size:.84rem!important;text-transform:uppercase;letter-spacing:.1em;margin:2px 0 17px!important}
+.footer-links a,.footer-contact-row a{font-size:.87rem!important;color:#b8cbbb!important;text-decoration:none!important}
+.footer-links a:hover,.footer-contact-row a:hover{color:#d5edbd!important}
+.footer-contact-row{color:#b8cbbb!important;font-size:.87rem!important}
+.footer-contact-row p{color:#b8cbbb!important;font-size:.87rem!important}
+.footer-bottom{border-top:1px solid #34533c!important;margin:40px auto 0!important;padding-top:18px!important;text-align:center!important}
+.footer-bottom p{color:#9fb6a3!important;font-size:.78rem!important}
+@media(max-width:980px){.footer-grid{grid-template-columns:1.2fr 1fr 1fr!important;gap:30px!important}}
+@media(max-width:760px){
+ .nav{min-height:72px!important;padding:9px 17px!important}
+ .logo{width:52px!important;height:52px!important}
+ .brand-name{font-size:.76rem!important;max-width:155px}
+ .nav-links{display:none;position:absolute;top:100%;left:0;right:0;z-index:110;background:#fff;padding:12px 22px 20px;box-shadow:0 16px 22px rgba(20,50,25,.08);flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:12px 3px;border-bottom:1px solid #edf2eb}
+ .menu-toggle{display:flex}
+ .registration-hero{padding:12px 17px 0!important}
+ .registration-hero-panel{min-height:300px!important;border-radius:12px!important;background-position:58% center!important}
+ .registration-hero-content{padding:42px 25px!important}
+ main{padding-bottom:55px!important}
+ form#applicationForm{margin:32px 17px 0!important;padding:24px 19px!important}
+ form#applicationForm .grid,form#applicationForm .choice-groups{grid-template-columns:1fr}
+ form#applicationForm .field.full{grid-column:auto}
+ form#applicationForm .actions{align-items:stretch;flex-direction:column-reverse}
+ form#applicationForm .btn{text-align:center;width:100%}
+ .footer-grid{grid-template-columns:1fr 1fr!important;gap:30px 20px!important}
+ .footer-brand-column{grid-column:1/-1}
+ footer.site-footer{padding:46px 18px 20px!important}
+}
+@media(max-width:480px){
+ .footer-grid{grid-template-columns:1fr!important}
+ .footer-brand-column{grid-column:auto}
+ .registration-hero h1{font-size:2.55rem!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+</style>
+
+<style id="tbarc-footer-logo-circle-fix">
+  footer .footer-logo,
+  .footer .footer-logo {
+    display: block !important;
+    width: 68px !important;
+    height: 68px !important;
+    min-width: 68px !important;
+    max-width: 68px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: contain !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    padding: 5px !important;
+  }
+</style>
+
 </head>
 <body>
 <header class="top site-header">
@@ -285,7 +407,7 @@ footer.site-footer{margin-top:0!important}
   <div class="footer-grid">
     <div class="footer-brand-column">
       <div class="footer-brand-row">
-        <a href="https://tbarc.in" aria-label="TBARC India home"><img class="footer-logo" src="images/logo.png" alt="TBARC India logo"></a>
+        <a href="https://tbarc.in" aria-label="TBARC India home"><img class="footer-logo" src="../images/logo.png" alt="TBARC India logo"></a>
         <div class="footer-brand">Tropical Biodiversity<br>Action &amp; Research Centre</div>
       </div>
       <p style="max-width:290px;color:#b8cbbb;font-size:.88rem">Working for biodiversity conservation through ecological research, education and community action.</p>
