@@ -344,7 +344,7 @@ a{transition:color .2s ease,background .2s ease,transform .2s ease}
  .nav-link,.nav-links>a{padding:13px 3px!important;border-bottom:1px solid #edf2eb!important}
  .nav-link.primary{margin-top:10px;justify-content:center}
  .menu-toggle{display:flex}
- .hero{padding:12px 17px 0!important}
+ .hero{padding:0!important}
  .hero-inner{min-height:560px;padding:52px 27px!important;border-radius:12px}
  .hero h1{font-size:clamp(2.65rem,12vw,4rem)!important}
  .hero p{font-size:1rem!important}
@@ -384,8 +384,8 @@ h1,h2,h3,.brand-name,.footer-brand{font-family:'Manrope',sans-serif!important}
 .nav-links .nav-link:hover{color:var(--green)!important;background:transparent!important}
 .nav-links .nav-link.primary{padding:11px 17px!important;border-radius:7px!important;background:var(--green)!important;color:#fff!important}
 .nav-links .nav-link.primary:hover{background:#0d3b20!important;transform:translateY(-2px)}
-.hero{padding:0 22px!important;margin:0!important;background:#fff!important}
-.hero-inner{max-width:1160px!important;min-height:590px!important;margin:0 auto!important;padding:76px 7.5%!important;border-radius:0 0 18px 18px!important;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;background:#173d25 url('images/hero.jpg') center 48%/cover no-repeat!important}
+.hero{padding:0!important;margin:0!important;width:100%;background:#173d25!important}
+.hero-inner{width:100%!important;max-width:none!important;min-height:calc(100vh - 86px)!important;min-height:calc(100svh - 86px)!important;margin:0!important;padding:76px max(7.5%, calc((100% - 1160px)/2))!important;border-radius:0!important;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;background:#173d25 url('images/hero.jpg') center center/cover no-repeat!important}
 .hero-inner:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,32,17,.91) 0%,rgba(5,32,17,.70) 48%,rgba(5,32,17,.18) 100%);z-index:0}
 .hero-inner>*{position:relative;z-index:1}
 .hero .eyebrow{display:inline-flex!important;align-items:center;gap:9px;padding:0!important;margin:0 0 12px!important;border:0!important;border-radius:0!important;background:transparent!important;color:#d8f3b0!important;font-size:.76rem!important;letter-spacing:.14em!important}
@@ -443,7 +443,7 @@ h1,h2,h3,.brand-name,.footer-brand{font-family:'Manrope',sans-serif!important}
  .nav-links .nav-link.primary{margin-top:10px;justify-content:center;padding:12px 16px!important}
  .menu-toggle{display:flex!important}
  .hero{padding:12px 17px 0!important}
- .hero-inner{min-height:530px!important;padding:48px 26px!important;border-radius:12px!important;background-position:58% center!important}
+ .hero-inner{width:100%!important;max-width:none!important;min-height:calc(100vh - 72px)!important;min-height:calc(100svh - 72px)!important;padding:48px 26px!important;border-radius:0!important;background-position:58% center!important}
  .hero h1{font-size:clamp(2.55rem,11vw,4rem)!important}
  .hero p{font-size:1rem!important}
  .section{padding:64px 17px!important}
