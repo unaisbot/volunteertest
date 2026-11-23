@@ -25,6 +25,15 @@ input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0
 .notice{display:none;margin-top:17px;padding:13px 15px;border-radius:9px;background:#fff5e8;border:1px solid #f0d5ae;color:#6b471c;font-size:13px}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 25px}
 @media(max-width:650px){main{margin:28px auto}.grid,.choice-groups{grid-template-columns:1fr}.actions{align-items:stretch;flex-direction:column-reverse}.btn{text-align:center}.logo{width:112px}.nav{padding:10px 14px}}
+
+/* CV is optional: suppress any inherited required marker for this field only. */
+#cvLabel .required,
+.cv-optional-field label .required,
+.cv-optional-field label::after {
+  display: none !important;
+  content: none !important;
+}
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -390,7 +399,7 @@ footer.site-footer{background:#102d1b!important;color:#dce8dd!important;border:0
 <div class="field"><label for="linkedin">LinkedIn profile URL</label><input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/..."></div>
 <div class="field"><label for="other">Other website / portfolio URL</label><input id="other" name="otherLink" type="url" placeholder="https://..."></div>
 <div class="field"><label for="photo">Your photograph</label><input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp"><p class="upload-note">JPG, PNG or WebP. Please use a clear individual photograph.</p></div>
-<div class="field"><label for="cv">CV / Resume / Portfolio <span class="optional-label">(Optional)</span></label><input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx"><p class="upload-note">Optional. You may upload a PDF or Word document (maximum 4 MB), or leave this field blank.</p></div>
+<div class="field cv-optional-field"><label id="cvLabel" for="cv">CV / Resume / Portfolio <span class="optional-label">(Optional)</span></label><input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx"><p class="upload-note">Optional. You may upload a PDF or Word document (maximum 4 MB), or leave this field blank.</p></div>
 </div>
 </section>
 <section class="section">
