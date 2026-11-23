@@ -536,9 +536,19 @@ form.addEventListener('submit', async function(event) {
       transport.remove();
 
       if (e.data.data.ok) {
-        success.innerHTML = '<strong>Application submitted successfully!</strong><br>Your reference number: <strong>' +
-          String(e.data.data.applicationId || '').replace(/[<>&"]/g, '') +
-          '</strong><br>Status: Pending Review. Please save your reference number.';
+        success.innerHTML =
+          '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">' +
+            '<span aria-hidden="true" style="font-size:22px">✓</span>' +
+            '<strong style="font-size:1.05rem">Application submitted successfully!</strong>' +
+          '</div>' +
+          '<p style="margin:0 0 8px">Thank you for applying to become a TBARC volunteer. Your application has been received and is pending review.</p>' +
+          '<p style="margin:0 0 12px">Your Application ID: <strong>' +
+            String(e.data.data.applicationId || '').replace(/[<>&"]/g, '') +
+          '</strong><br>Please save this reference number for future communication.</p>' +
+          '<div style="background:#fff8e9;border:1px solid #ead6a8;border-radius:8px;padding:12px 14px;color:#684b18">' +
+            '<strong>Important: Check your Spam / Junk folder</strong>' +
+            '<p style="margin:5px 0 0">A confirmation email should arrive at the email address you provided. Please check your Inbox. If you cannot find it, check your Spam/Junk folder and Promotions tab. If the message is in Spam, choose <strong>Report not spam</strong> so future TBARC emails are easier to find.</p>' +
+          '</div>';
         success.style.display = 'block';
         form.reset();
         success.scrollIntoView({behavior:'smooth',block:'center'});
